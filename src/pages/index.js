@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled, { keyframes, createGlobalStyle } from "styled-components"
 
-import Resume from '../pdfs/jb_resume_fall18.pdf'
+import Resume from '../pdfs/jb_resume_spring19.pdf'
 import SEO from '../components/seo'
 import MainDesign from '../components/MainDesign'
 import ProjectEntry from '../components/ProjectEntry'
@@ -21,7 +21,6 @@ class IndexPage extends React.Component {
 				allMarkdownRemark: { edges },
 			},
 		} = this.props;
-		console.log(edges)
 		return (
 			<div id="index">
 				<SEO title="Home" keywords={['developer', 'AI', 'design', 'web']} />
@@ -54,7 +53,7 @@ class IndexPage extends React.Component {
 					</TitleContent>
 					<WorksHeader>Works</WorksHeader>
 					<Works id="works">
-						{edges.map(edge => <ProjectEntry key={edge.node.id} post={edge.node} color="#5FF2D6"></ProjectEntry>)}
+						{edges.map(edge => <ProjectEntry key={edge.node.id} post={edge.node}></ProjectEntry>)}
 					</Works>
 				</MainContent>
 			</div>
@@ -64,29 +63,25 @@ class IndexPage extends React.Component {
 
 export const pageQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___enddate] }) {
       edges {
         node {
           id
           excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            path
-            title
+            enddate(formatString: "MMMM DD, YYYY")
+            startdate(formatString: "MMMM DD, YYYY")
+						path
+						title
+						type
+						tools
+						color
           }
         }
       }
     }
   }
 `
-
-const PostLink = ({ post }) => (
-  <div>
-    <Link to={post.frontmatter.path}>
-      {post.frontmatter.title} ({post.frontmatter.date})
-    </Link>
-  </div>
-)
 
 
 const Works = styled.div`

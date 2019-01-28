@@ -2,25 +2,43 @@ import React from 'react';
 import styled from "styled-components"
 import { Link } from 'gatsby'
 
-const ProjectEntry = ({ post, color, image }) => (
+const ProjectEntry = ({ post, image }) => (
 	<Root>
-		<Link to={post.frontmatter.path}>
+		<Link style={{width:'100%', display: 'block'}} to={post.frontmatter.path}>
 			<ProjectContainer>
-				<ProjectHeader>{post.frontmatter.title}</ProjectHeader>
-				<Highlight color={color}>
-					<h1>{post.frontmatter.title}</h1>
-				</Highlight>
+				<ProjectHeader>
+					{post.frontmatter.title}
+					<Highlight color={post.frontmatter.color}>
+						<h1>{post.frontmatter.title}</h1>
+					</Highlight>
+				</ProjectHeader>
+				<Details>
+					<Type>{post.frontmatter.type}</Type>
+					<Tools>{post.frontmatter.tools}</Tools>
+				</Details>
 				<ProjectImage src={image}></ProjectImage>
 			</ProjectContainer>
 		</Link>
 	</Root>
 )
 
-
+const Details = styled.div`
+	float: right;
+    color: #2e2e2e;
+	text-align: right;
+	display: flex;
+	align-content: baseline;
+	flex-flow: column;
+	padding: 23px 0;
+`
+const Type = styled.div`
+	font-weight: 600;
+`
+const Tools = styled.div``
 
 const Highlight = styled.div`
 	position: absolute;
-	top: 27px;
+	top: -5px;
 	left: -10px;
 	width: 0;
 	overflow: hidden;
@@ -34,13 +52,13 @@ const Highlight = styled.div`
 `
 
 const ProjectContainer = styled.div`
-	position: relative;
-	display: inline-block;
+	width: 100%;
 `
 
 const ProjectHeader = styled.h1`
 	position: relative;
 	margin: 32px 0;
+	display: inline-block;
 `
 
 
