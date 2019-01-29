@@ -22,7 +22,7 @@ class IndexPage extends React.Component {
 		} = this.props;
 		return (
 			<div id="index">
-				<SEO title="Home" keywords={['developer', 'AI', 'design', 'web']} />
+				<SEO title="Portfolio" keywords={['developer', 'AI', 'design', 'web']} />
 				<GlobalStyle/>
 				<MainContent animation={fadeIn}>
 					<TitleContent>

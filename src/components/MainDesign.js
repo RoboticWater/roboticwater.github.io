@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { keyframes, css } from "styled-components"
+import styled, { keyframes } from "styled-components"
 
 import sail0 from '../images/sail0.svg';
 import sail1 from '../images/sail1.svg';
