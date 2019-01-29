@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import styled, { keyframes, createGlobalStyle } from "styled-components"
 
 import Resume from '../pdfs/jb_resume_spring19.pdf'
