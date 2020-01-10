@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:900|Roboto+Condensed:300,400&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	font-size: 14px;
+	line-height: 1.5;
+	color: var(--black);
+    animation: 0.85s cubic-bezier(.25,.46,.26,.98) fadeIn;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 0.5em 0;
+	font-weight: 400;
+	line-height: 1.2;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+a {
+	color: inherit;
+}
+
+code {
+	font-family: menlo, inconsolata, monospace;
+	font-size: calc(1em - 2px);
+	color: #555;
+	background-color: #f0f0f0;
+	padding: 0.2em 0.4em;
+	border-radius: 2px;
+}
+
+@media only screen and (min-width: 400px) {
+	body {
+		font-size: 16px;
+	}
+}
+
+:root {
+	--yellow: #FDDE69;
+	--red: #FC4C5D;
+	--teal: #5FF2D6;
+	--blue: #4040CC;
+	--black: #242424;
+	--nav-height: 54px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    left:  40px;
+    text-transform: uppercase;
+    /* font-style: italic; */
+}
+#works {
+    /* padding: 40px; */
+}
+.centered {
+    display: grid;
+    max-width: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));;
+    grid-template-rows: repeat(2, 1fr);
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    justify-content: center;
+    justify-items: center;
+    margin: 0 auto;
+}
+.main-content {
+    height: calc(100vh - var(--nav-height));
+    margin: 0 auto;
+    padding-top: var(--nav-height);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    justify-content: center;
+    max-width: 1000px;
+}
+
+article {
+    min-height: 90vh;
+    box-sizing: border-box;
+}
+
+#logo {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    align-self: center;
+    justify-self: center;
+}
+#logo .middle {
+    
+    animation: 0.65s cubic-bezier(.25,.46,.26,.98) scaleIn;
+    transform-origin: 50px -30px;
+}
+#logo .top {
+    animation: 0.65s cubic-bezier(.25,.46,.26,.98) slideDown;
+}
+#logo .bottom {
+    animation: 0.65s cubic-bezier(.25,.46,.26,.98) slideUp;
+}
+.title-content {
+    /* text-align: center; */
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 0 auto;
+}
+.name {
+    display: inline-block;
+    float: left;
+}
+.name h1 {
+    margin: 0;
+    font-size: 5em;
+    line-height: 0.85em;
+}
+.name h1:first-child {
+    font-size: 5.9em;
+}
+.links {
+    width: 100%;
+    display: block;
+    padding-top: 2px;
+    margin-bottom: 7px;
+}
+a {
+    color: #2e2e2e;
+    text-decoration: none;
+    border-bottom: 1px #3e3e3e dashed;
+    margin: 0 4px;
+}
+a:hover {
+    color: var(--red);
+    border-bottom-color: var(--red);
+}
+.bio > div {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-content {
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+        padding-bottom: 30px;
+        height: calc(100vh - var(--nav-height) - 30px);
+        max-height: 800px;
+    }
+    #works {
+        /* width: 400px; */
+        padding: 0;
+        margin-bottom: 100px;
+    }
+    .centered {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #logo {
+        /* width: auto; */
+        height: 100%;
+    }
+    .name h1 {
+        font-size: 4em;
+    }
+    .name h1:first-child {
+        font-size: 4.7em;
+    }
+    .title-content {
+        width: 250px;
+    }
+    .bio > div {
+        line-height: 22px;
+        font-size: 18px;
+    }
+}
+@keyframes slideUp { 
+    0% { transform: translateX(-20%); } 
+    100% { transform: none; }
+}
+
+@keyframes slideDown {
+    0% { transform: translateX(20%); } 
+    100% { transform: none; }
+}
+
+@keyframes scaleIn {
+    0% { transform: scale(0.7); } 
+    100% { transform: none; }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; } 
+    100% { opacity: 1; }
+}
