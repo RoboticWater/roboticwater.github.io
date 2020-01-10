@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    display: flex;
+    max-width: 2100px;
+    margin-left: auto;
+}
+
+.meta {
+    flex: 1;
+    padding: 50px 160px 50px 130px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+.meta > div {
+    margin: 5px 0;
+}
+
+div.description {
+    margin-top: auto;
+}
+
+.date {
+    font-style: italic;
+}
+
+.tags {
+    font-size: 0.8em;
+    /* color: #777; */
+}
+
+.title-block {
+    background: var(--black);
+    padding: 50px;
+    position: relative;
+    height: 400px;
+    width: 25%;
+    transition: width ease 0.3s;
+}
+
+
+h1 {
+    font-size: 3.3em;
+    background: #fff;
+    height: 300px;
+    width: 300px;
+    padding: 20px;
+    margin: 0;
+    z-index: 1;
+    position: relative;
+}
+
+.sail-container { 
+    position: relative;
+    transform: translateX(-50%);
+    animation: slideIn 0.5s cubic-bezier(.25,.46,.26,.98);
+    width: 300px;
+}
+
+.sail {
+    width: 300px;
+    height: 300px;
+    background: var(--yellow);
+    position: absolute;
+    z-index: 0;
+}
+.sail:nth-child(1) {
+    top: 0;
+    left: 0;
+    transform: rotateX(10deg) rotateY(-20deg) rotateZ(-30deg);
+    animation: 0.5s cubic-bezier(.25,.46,.26,.98) sailIn0;
+}
+.sail:nth-child(2) {
+    top: 100px;
+    right: -15%;
+    background: var(--blue);
+    transform: rotateX(20deg) rotateY(-30deg) rotateZ(30deg);
+    animation: 0.5s cubic-bezier(.25,.46,.26,.98) sailIn1;
+}
+
+@keyframes sailIn0 {
+    from {
+        transform: none;
+    }
+    to {
+        transform: rotateX(10deg) rotateY(-20deg) rotateZ(-30deg);
+    }
+}
+
+@keyframes sailIn1 {
+    from {
+        transform: none;
+        top: 0;
+        right: 0;
+    }
+    to {
+        transform: rotateX(20deg) rotateY(-30deg) rotateZ(30deg);
+        top: 100px;
+        right: -15%;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px) translateX(-50%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.tag {
+    padding: 0 1px;
+}
+
+nav {
+    position: fixed;
+    top: 20px;
+    bottom: 0;
+    width: 70px;
+    left: 0;
+}
+
+.arrow-button {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 0;
+    margin-left: 20px;
+    border: none;
+    display: block;
+}
+
+.back {
+    transform: rotate(-90deg);
+}
+
+.up {
+    position: absolute;
+    bottom: 50px;
+}
+
+.arrow {
+    margin: 0 auto;
+    width: 4px;
+    height: 100%;
+    background: var(--black);
+    transition: transform 0.3s cubic-bezier(.25,.46,.26,.98);
+}
+
+.pointer {
+    position: absolute;
+    border: solid var(--black) 4px;
+    border-bottom: none;
+    border-right: none;
+    width: 50%;
+    height: 50%;
+    top: 2px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    transition: top 0.3s cubic-bezier(.25,.46,.26,.98);
+}
+
+.arrow-button:hover .pointer {
+    top: -5px;
+}
+
+.arrow-button:hover .arrow {
+    transform: translateY(5px);
+}
+
+.gallery {
+    border-top: solid 8px var(--black);
+    /* border-left: none;
+    border-right: none; */
+    max-width: 960px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 10px;
+    padding-top: 10px;
+}
+
+.gallery img {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+    min-width: 50px;
+}
+
+.gallery > *:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.content {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+
+
+@media only screen and (min-width: 1400px) {
+    .title-block {
+        width: 35%;
+    }
+}
+
+@media only screen and (max-width: 880px) {
+    header {
+        flex-direction: column-reverse;
+    }
+    .title-block {
+        width: 35%;
+        align-self: flex-end;
+    }
+    .meta {
+        padding: 0;
+        max-width: 400px;
+        margin: 50px auto 0;
+    }
+
+    .gallery {
+        margin: 20px;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    h1 {
+        font-size: 2.5em;
+        height: 200px;
+        width: 200px;
+        padding: 15px;
+    }
+    
+    .sail-container { 
+        width: 200px;
+    }
+    .sail {
+        height: 200px;
+        width: 200px;
+    }
+    
+    .title-block {
+        height: 300px;
+    }
+
+    .meta {
+        margin: 30px;
+    }
+    
+    .arrow-button {
+        display: none;
+    }
+    
+.gallery > *:nth-child(1) {
+    grid-column-end: 1;
+}
+}
