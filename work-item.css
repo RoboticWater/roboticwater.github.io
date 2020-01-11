@@ -6,6 +6,11 @@
     position: relative;
     border: none !important;
     color: var(--black) !important;
+    transition: transform 0.45s ease, opacity 0.25s ease;
+}
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
 }
 .work-item:before {
     content: '';

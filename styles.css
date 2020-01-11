@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:900|Roboto+Condensed:300,400&display=swap');
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 body {

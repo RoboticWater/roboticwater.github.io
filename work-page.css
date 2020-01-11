@@ -261,7 +261,7 @@ nav {
         display: none;
     }
     
-.gallery > *:nth-child(1) {
-    grid-column-end: 1;
-}
+    .gallery > *:nth-child(1) {
+        grid-column-end: 1;
+    }
 }

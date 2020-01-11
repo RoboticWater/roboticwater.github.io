@@ -59,7 +59,7 @@
     </div>
     <article id="works">
         <div class="centered">
-            <a class="work-item" href="./lynnette/index.html">
+            <a class="work-item hidden" href="./lynnette/index.html">
                 <div class="background"></div>
                 <div class="content">
                     <div class="image-container">
@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </a>
-            <a class="work-item" href="./lecture-code/index.html">
+            <a class="work-item hidden" href="./lecture-code/index.html">
                 <div class="background"></div>
                 <div class="content">
                     <div class="image-container">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
             </a>
-            <a class="work-item">
+            <a class="work-item hidden">
                 <div class="background"></div>
                 <div class="content">
                     <div class="image-container">
@@ -98,4 +98,19 @@
         </div>
     </article>
 </body>
+<script>
+    let worksRef = document.getElementById('works');
+    let workItems = document.getElementsByClassName('work-item');
+    const timeout = i => setTimeout(() => {
+        workItems[i].classList.remove('hidden');
+    }, 100 * i);
+    window.addEventListener('scroll', e => {
+        let worksTop = worksRef.getBoundingClientRect().top;
+        if (worksTop < window.innerHeight - 100) {
+            for (var i = 0; i < workItems.length; i++) {
+                timeout(i);
+            }
+        }
+    })
+</script>
 </html>
