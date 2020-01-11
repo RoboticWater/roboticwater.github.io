@@ -10,7 +10,7 @@
 }
 .hidden {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(30px) rotate(5deg);
 }
 .work-item:before {
     content: '';
