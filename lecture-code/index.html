@@ -13,9 +13,7 @@
 
 <body>
     <div class="popup">
-        <div class="popup-conntent">
-
-        </div> 
+        <img src="" alt="">
     </div>
     <nav>
         <a class="back arrow-button" href="../index.html#works">
@@ -48,5 +46,28 @@
     </div>
     <div class="content"></div>
 </body>
+<script>
+    let imgs = document.getElementsByTagName("img");
+    let popup = document.getElementsByClassName("popup")[0]
+    let popupImage = popup.children[0];
+    console.log(popupImage);
+    function setPopup(img) {
+        popup.classList.add('show');
+        popupImage.src = img
+    }
+    for (var i = 0; i < imgs.length; i++) {
+        (function() {
+            var s = imgs[i].src;
+            imgs[i].addEventListener('click', () => {
+                popup.classList.add('show');
+                popupImage.src = s
+            });
+        })()
+        
+    }
+    popup.addEventListener("click", () => {
+        popup.classList.remove('show');
+    })
+</script>
 
 </html>

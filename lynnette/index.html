@@ -13,9 +13,7 @@
 
 <body>
     <div class="popup">
-        <div class="popup-conntent">
-
-        </div> 
+        <img src="" alt="">
     </div>
     <nav>
         <a class="back arrow-button" href="../index.html#works">
@@ -45,9 +43,108 @@
         <img src="./lynnette01.png" alt="" >
         <img src="https://media.giphy.com/media/h8rJPU6fdXKfB5KgUx/giphy.gif"></img>
         <img src="https://media.giphy.com/media/XEI92GNiejiSaRVQBm/giphy.gif"></img>
-        <img src="./lynnette-alien-success.png" alt="">
+        <!-- <img src="./lynnette-alien-success.png" alt=""> -->
     </div>
-    <div class="content"></div>
+    <div class="content">
+        <!-- <p>Designing for children is more complicated than it may seem.<br>
+            and unfortunately, I didn’t have access to any user testing groups</p> -->
+        <h2 id="design">Design</h2>
+        <div class="image-box">
+            <div class="figure" id="fig1">
+                <div class="fig-content">
+                    <img src="./lynnette-designprototype-01.png" alt="">
+                    <img src="./lynnette-designprototype-04.png" alt="">
+                </div>
+                <div class="fig-meta"><strong>Figure 1:</strong> Interaction prototypes</div>
+            </div>
+        </div>
+        <p>Here are graphics I designed during the prototyping phase. <a href="#fig1"><strong>Figure 1</strong></a> shows potential interactions on
+            and visual representations of expressions, <a href="#fig2"><strong>Figure 2</strong></a> shows possible aesthetics the equations could
+            have, and <a href="#fig3"><strong>Figure 3</strong></a> shows how the overall interface would be structured, with the equation in the center, and the operators above in a box.
+            I needed to make sure that all the draggable elements looked draggable immediately, so I decided to emulate child-oriented interfaces like Scratch and make each element a colored block. 
+        </p>
+        <div class="image-box">
+            <div class="figure" id="fig2">
+                <div class="fig-content">
+                    <img src="./lynnette-designprototype-02.png" alt="">
+                </div>
+                <div class="fig-meta"><strong>Figure 2:</strong> Aesthetic prototypes</div>
+            </div>
+            <div class="figure" id="fig3">
+                <div class="fig-content">
+                    <img src="./lynnette-designprototype-03.png" alt="">
+                </div>
+                <div class="fig-meta"><strong>Figure 3:</strong> Screen layout</div>
+            </div>
+        </div>
+        <p>
+            As you can tell from the final images, the boxes were kept for the numbers, but not operators.
+            That's because we found that boxed operators just didn't read as well as unboxed, and putting the operators in their own
+            partition on the screen (kind of like one might put their pencils and erasers on their own desk) was
+            a sufficient hint that they were interactable.
+        </p>
+        <div class="image-box">
+            <div class="figure" id="fig1">
+                <div class="fig-content">
+                    <img src="./lynnette-old.png" alt="">
+                    <img src="./lynnette01.png" alt="">
+                </div>
+                <div class="fig-meta"><strong>Figure 4:</strong> Type-in interface (left) vs. drag & drop (right)</div>
+            </div>
+            
+        </div>
+        <p>
+            The idea for the space aesthetic came from the <em>Lynnette</em> team. They're working on upgrading the
+            aesthetic of their math interfaces, and when I was recruited, it looked like does <a href="#fig4"><strong>Figure 4</strong></a> on the right. 
+            While the theme intrigued me, I thought the overall interface was rather utilitarian, so I created art assests that were a little more visually interesting without being distracting. 
+        </p>
+        <div class="image-box">
+            <div class="figure" id="fig1">
+                <div class="fig-content">
+                    <img src="./lynnette-alien-success.png" alt="">
+                </div>
+                <div class="fig-meta"><strong>Figure 5:</strong> Flow diagrams</div>
+            </div>
+        </div>
+        <p>The alien came from <a href="https://lynnette.ctat.cs.cmu.edu/">the project’s website</a>, however, it was my idea to
+            use it in the application itself. For such a cute little critter, it wasn’t being used anywhere. My understanding
+            was (and still is) that children tend to respond better to having a character present them information than just
+            presenting them the information outright, so I decided to replace <em>Lynnette</em>’s error and hint feedback
+            component with the alien and a dialog box.</p>
+        <h2 id="structure">Structure</h2>
+        <div class="image-box">
+            <div class="figure" id="fig1">
+                <div class="fig-content">
+                    <img src="./lynnette-flowdiagram-01.png" alt="">
+                    <img src="./lynnette-flowdiagram-02.png" alt="">
+                </div>
+                <div class="fig-meta"><strong>Figure 6:</strong> Alien character</div>
+            </div>
+        </div>
+        <p><a href="#fig6"><strong>Figure 6</strong></a> shows a visual aid I designed in Illustrator that I used to organize my thoughts and
+            describe to others how the backend of the application would interact with the frontend. To explain some of the
+            jargon: the tutor is <em>Lynnette</em>’s existing intelligent feedback system that assesses the accuracy of inputs
+            and the Grammar is a parser that can apply operations to equations (you’d be surprised how tricky it is to represent
+            all of algebra in code).</p>
+        <p>The choice of Svelte as the UI framework was critical to the success of this project. Normally I wouldn’t dwell on
+            the choice of UI framework, because usually it just comes down to personal preference, but I chose Svelte because it
+            was the only UI framework I knew that compiled down to normal javascript. This was essential because
+            <em>Lynnette</em>’s backend can’t run the kind of Node server that a framework like React requires. Initially, my
+            only option was to use static html with jQuery, which while doable, doesn’t allow for the kind of hierarchical
+            structure that a UI framework provides.</p>
+        <h2 id="results">Results</h2>
+        <p>A research partner and I tested the interface prototype with children in the target age group, and the results were
+            surprisingly positive. We sat them in front of the app and initially gave them no instruction about how to use it.
+            The kids understood the interface immediately, knowing which elements were draggable and what was happening
+            algebraically. The only difficulty they had was figuring out how to resolve operations (add/subtract/multiply/divide
+            numbers), but once we told them that you just had to drag one number over another, they were perfectly comfortable
+            with all the interactions.</p>
+        <p>
+            In fact, both kids suggested that we implement features which we had come up with during the prototyping process, but left on the cutting room floor.
+            For example, they wanted the ability to click on the history to return to previous states in the equation and proceed from there, and we actually had this functionality throught most of the prototype,
+            but had to drop it because the tutor backend couldn't easily handle going back to different parts of the problem. 
+        </p>
+    </div>
     <!-- <img src="https://media.giphy.com/media/XEI92GNiejiSaRVQBm/giphy.gif" ></img>
     <img src="https://media.giphy.com/media/h8rJPU6fdXKfB5KgUx/giphy.gif" ></img>
     <img src="https://media.giphy.com/media/UTpkNnmHGONrhd3iaH/giphy.gif" ></img> -->
@@ -62,5 +159,28 @@
     </div> -->
     <!-- <img src="./lynnette-alien.svg" alt="" width="100px" style="float: right;"> -->
 </body>
+<script>
+    let imgs = document.getElementsByTagName("img");
+    let popup = document.getElementsByClassName("popup")[0]
+    let popupImage = popup.children[0];
+    console.log(popupImage);
+    function setPopup(img) {
+        popup.classList.add('show');
+        popupImage.src = img
+    }
+    for (var i = 0; i < imgs.length; i++) {
+        (function() {
+            var s = imgs[i].src;
+            imgs[i].addEventListener('click', () => {
+                popup.classList.add('show');
+                popupImage.src = s
+            });
+        })()
+        
+    }
+    popup.addEventListener("click", () => {
+        popup.classList.remove('show');
+    })
+</script>
 
 </html>
