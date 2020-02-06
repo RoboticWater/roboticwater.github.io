@@ -44,7 +44,49 @@
         <img src="./lecture-code03.png" alt="" >
         <img src="https://media.giphy.com/media/hSj02EkkbRTezOPAIF/giphy.gif" alt="">
     </div>
-    <div class="content"></div>
+    <div class="content">
+        <p>I developed this app in response to a problem I kept running into: people read and write code at vastly different speeds.
+            In many situations, this is probably irrelevant, but in the context of a lecture, that means I have to frequently
+            pause with my code open to let people copy before showing them the important part—what the code actually does. I had
+            initially responded to this by linking attendees to a repository with finished code, but that only shows the end
+            state of the project. Often times I think it’s beneficial to write <em>incorrect</em> code to see what happens.</p>
+        <h2 id="design-1">Design</h2>
+        <p>I kept the design simple, mainly because I didn’t see a need to do anything elaborate, but also because I didn’t want
+            any distractions from the code itself or my lecture. The final design should seem visually familiar to anyone
+            acquainted with text editors like Sublime Text or Atom with its four quadrants: logo and controls on the top, and
+            filetree and content on the bottom.</p>
+            <div class="image-box">
+                <div class="figure" id="fig1">
+                    <div class="fig-content"><img src="./lecture-code02.png" alt="">
+                    </div>
+                    <div class="fig-meta"><strong>Figure 1:</strong> Basic layout used to test backend</div>
+                </div>
+            </div>
+        <p>Simplicity, of course, doesn’t mean spartan to me. Theoretically, I could have just loaded the text into a page with
+            minimal markup like in <strong>Figure 1</strong>, but being too austere can be as illegible as being overdone—at the
+            very least, the code needed to be highlighted so people could read it.</p>
+        <h2 id="structure-1">Structure</h2>
+        <p>I designed this app with a MERN stack (MongoDB, Express, React, Node) for the web and a Python commandline script to
+            detect file changes locally. This was the first full stack application that I’d ever created entirely by myself, so
+            working with Express and MongoDB was initially a challenge. Fortunately, I had access to plenty of backend example
+            code from that some peers had written for our capstone project at Georgia Tech, so I was never completely lost.
+            Later I decided to replace React with Svelte, because I find that framework to be vastly more intuitive, but the
+            core structure remained the same.</p>
+        <p>The most critical feature, other than the core app, was the websocket integration. It isn’t <em>strictly</em>
+            necessary—the user could just reload the page whenever there’s an update, but then some users might end up copying
+            old code because they forgot to reload. I could have implemented some kind of polling, but that wouldn’t necessarily
+            follow the cadence of my lecture.</p>
+        <p>Because I didn’t want to pay for hosting, I decided to run the app off Heroku, which while convenient for my finances
+            and the development pipeline, meant that I couldn’t store files in a filesystem or else they’d disappear once
+            Heroku’s dynamic server deactivated. In theory, that might’ve been OK, given that the files would only be necessary
+            for the lecture, but I wanted to make sure that people had access to the files for a bit longer than Heroku’s ~30
+            minute churn. Thus, I had to design the app around GridFS, so I could store it on a free mLab database.</p>
+        <h2 id="results-1">Results</h2>
+        <p>The app was a success. Granted, I didn't run any structured user tests on it, but people never came to me with problems with the interface, and in the lectures where I used it, people seemed to ask me fewer questions about code structure.
+            Hardly a rigorous evaluation, of the UI, I know, but I was happy with how it was integrating into my workshops.
+            Were I to actually test its efficacy, I'd want to examine both people's usage of the interface, measure its impact on the length of the workshop (whether I can include more content) and quality of questions, and compare the delta in ability of attendees against a control group.
+        I just have neither the time nor the resources to actually do any of that.</p>
+    </div>
 </body>
 <script>
     let imgs = document.getElementsByTagName("img");
