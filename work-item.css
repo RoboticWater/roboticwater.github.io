@@ -21,19 +21,19 @@
     transition: transform 0.25s ease;
     z-index: 0;
     pointer-events: none;
-    transform: rotateX(10deg) rotateY(-20deg) rotateZ(-30deg);
+    transform: translateZ(-100px) rotateX(10deg) rotateY(-20deg) rotateZ(-30deg);
 }
 .work-item:nth-child(2):before {
     background: var(--red);
-    transform: rotateX(-30deg) rotateY(5deg) rotateZ(15deg);
+    transform: translateZ(-100px) rotateX(-30deg) rotateY(5deg) rotateZ(15deg);
 }
 .work-item:nth-child(3):before {
     background: var(--blue);
-    transform: rotateX(20deg) rotateY(-10deg) rotateZ(-5deg);
+    transform: translateZ(-100px) rotateX(20deg) rotateY(-10deg) rotateZ(-5deg);
 }
 .work-item:nth-child(4):before {
     background: var(--teal);
-    transform: rotateX(-5deg) rotateY(25deg) rotateZ(15deg);
+    transform: translateZ(-100px) rotateX(-5deg) rotateY(25deg) rotateZ(15deg);
 }
 .work-item:hover:before {
     transform: none;
