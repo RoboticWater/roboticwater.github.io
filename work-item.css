@@ -1,115 +1,115 @@
 .work-item {
-    margin: 40px;
-    cursor: pointer;
-    width: 300px;
-    height: 300px;
-    position: relative;
-    border: none !important;
-    color: var(--black) !important;
-    transition: transform 0.45s ease, opacity 0.25s ease;
+	margin: 40px;
+	cursor: pointer;
+	width: 300px;
+	height: 300px;
+	position: relative;
+	border: none !important;
+	color: var(--black) !important;
+	transition: transform 0.45s ease, opacity 0.25s ease;
 }
 .hidden {
-    opacity: 0;
-    transform: translateY(30px) rotate(5deg);
+	opacity: 0;
+	transform: translateY(30px) rotate(5deg);
 }
 .work-item:before {
-    content: '';
-    width: 80%;
-    height: 80%;
-    /* border-radius: 100%; */
-    background: var(--yellow);
-    position: absolute;
-    left: 0;
-    bottom: -25%;
-    /* top: 50%; */
-    /* transform: translate(-50%, -50%); */
-    transition: transform 0.25s ease;
-    z-index: 0;
-    pointer-events: none;
-    transform: rotateX(10deg) rotateY(-20deg) rotateZ(-30deg);
+	content: "";
+	width: 80%;
+	height: 80%;
+	/* border-radius: 100%; */
+	background: var(--yellow);
+	position: absolute;
+	left: 0;
+	bottom: -25%;
+	/* top: 50%; */
+	/* transform: translate(-50%, -50%); */
+	transition: transform 0.25s ease;
+	z-index: 0;
+	pointer-events: none;
+	transform: translateZ(-100px) rotateX(10deg) rotateY(-20deg) rotateZ(-30deg);
 }
 .work-item:nth-child(2):before {
-    background: var(--red);
-    transform: rotateX(-30deg) rotateY(5deg) rotateZ(15deg);
+	background: var(--red);
+	transform: translateZ(-100px) rotateX(-30deg) rotateY(5deg) rotateZ(15deg);
 }
 .work-item:nth-child(3):before {
-    background: var(--blue);
-    transform: rotateX(20deg) rotateY(-10deg) rotateZ(-5deg);
+	background: var(--blue);
+	transform: translateZ(-100px) rotateX(20deg) rotateY(-10deg) rotateZ(-5deg);
 }
 .work-item:nth-child(4):before {
-    background: var(--teal);
-    transform: rotateX(-5deg) rotateY(25deg) rotateZ(15deg);
+	background: var(--teal);
+	transform: translateZ(-100px) rotateX(-5deg) rotateY(25deg) rotateZ(15deg);
 }
 .work-item:hover:before {
-    transform: none;
+	transform: none;
 }
 .background {
-    background: var(--black);
-    width: 90%;
-    height: 90%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
+	background: var(--black);
+	width: 90%;
+	height: 90%;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
 }
 .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 90%;
-    height: 90%;
-    z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 90%;
+	height: 90%;
+	z-index: 1;
 }
 .image-container {
-    height: 80%;
-    width: 100%;
-    background: #ddd;
-    overflow: hidden;
+	height: 80%;
+	width: 100%;
+	background: #ddd;
+	overflow: hidden;
 }
 .image {
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    transition: transform 0.25s ease;
+	width: 100%;
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: transform 0.25s ease;
 }
 
 .work-item:hover .image {
-    transform: scale(1.2);
+	transform: scale(1.2);
 }
 .meta {
-    background: #fff;
-    height: 20%;
-    width: 100%;
-    padding: 5px 8px;
-    box-sizing: border-box;
+	background: #fff;
+	height: 20%;
+	width: 100%;
+	padding: 5px 8px;
+	box-sizing: border-box;
 }
 .title {
-    font-size: 1.1pc;
-    text-align: right;
-    margin: 0;
+	font-size: 1.1pc;
+	text-align: right;
+	margin: 0;
 }
-.info {        
-    font-style: italic;
-    font-size: 1pc;
-    text-align: right;
+.info {
+	font-style: italic;
+	font-size: 1pc;
+	text-align: right;
 }
 @media only screen and (max-width: 600px) {
-    .work-item {
-        width: 300px;
-        height: 300px;
-    }
+	.work-item {
+		width: 300px;
+		height: 300px;
+	}
 }
 @media only screen and (max-width: 400px) {
-    .work-item {
-        width: 250px;
-        height: 250px;
-    }
-    .title {
-        font-size: 0.9pc;
-    }
-    .info {
-        font-size: 0.8pc;
-    }
+	.work-item {
+		width: 250px;
+		height: 250px;
+	}
+	.title {
+		font-size: 0.9pc;
+	}
+	.info {
+		font-size: 0.8pc;
+	}
 }
