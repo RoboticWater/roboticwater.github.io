@@ -130,6 +130,11 @@
 			setTimeout(() => {
 				workItems[i].classList.remove("hidden");
 			}, 100 * i);
+		if (window.location.hash === "#works") {
+			for (var i = 0; i < workItems.length; i++) {
+				timeout(i);
+			}
+		}
 		window.addEventListener("scroll", (e) => {
 			let worksTop = worksRef.getBoundingClientRect().top;
 			if (worksTop < window.innerHeight - 100) {
