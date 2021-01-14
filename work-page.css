@@ -52,6 +52,8 @@ h1 {
 	margin: 0;
 	z-index: 1;
 	position: relative;
+	display: grid;
+	/* align-items: end; */
 }
 
 .sail-container {
@@ -83,6 +85,21 @@ h1 {
 	transform: translateZ(-100px) rotateX(20deg) rotateY(-30deg) rotateZ(30deg);
 	animation: 0.5s cubic-bezier(0.25, 0.46, 0.26, 0.98) sailIn1;
 	-webkit-animation: 0.5s cubic-bezier(0.25, 0.46, 0.26, 0.98) sailIn1;
+}
+
+.image-list {
+	margin: 0;
+	padding: 10px;
+}
+
+.image-list li {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	margin: 10px 0;
+}
+.image-list img {
+	max-width: 80px;
 }
 
 @keyframes sailIn0 {
@@ -301,6 +318,9 @@ nav {
 	.gallery > *:nth-child(1) {
 		grid-column-end: 1;
 	}
+	
+.image-list li {
+	flex-direction: column;
 }
 
 @media only screen and (max-width: 400px) {
