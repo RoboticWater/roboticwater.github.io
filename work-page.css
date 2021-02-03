@@ -318,17 +318,10 @@ nav {
 	.gallery > *:nth-child(1) {
 		grid-column-end: 1;
 	}
-	
-.image-list li {
-	flex-direction: column;
 }
 
-@media only screen and (max-width: 400px) {
-	.image-box img {
-		max-height: 340px;
-		max-width: 340px;
-		margin: 5px;
-	}
+.image-list li {
+	flex-direction: column;
 }
 
 .popup {
@@ -380,4 +373,12 @@ nav {
 .popup.show {
 	opacity: 1;
 	pointer-events: auto;
+}
+
+@media only screen and (max-width: 400px) {
+	.image-box img {
+		max-height: 340px;
+		max-width: 340px;
+		margin: 5px;
+	}
 }
