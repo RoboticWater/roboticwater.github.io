@@ -318,10 +318,10 @@ nav {
 	.gallery > *:nth-child(1) {
 		grid-column-end: 1;
 	}
-}
 
-.image-list li {
-	flex-direction: column;
+	.image-list li {
+		flex-direction: column;
+	}
 }
 
 .popup {
